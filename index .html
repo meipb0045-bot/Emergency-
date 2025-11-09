@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Emergency SOS — South India Medical Finder</title>
+<style>
+  :root{
+    --accent:#c62828;
+    --dark:#1f2933;
+    --muted:#5b6770;
+    --card:#ffffffcc;
+    --glass: rgba(255,255,255,0.92);
+  }
+  html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:#e9f2f8;color:var(--dark);}
+  /* fixed background image */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/06/09/53/pharmacy-2596086_1280.jpg');
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.55) saturate(0.95);
+    z-index:-1;
+  }
+  .wrap{max-width:1100px;margin:22px auto;padding:18px;}
+  header{display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,var(--accent),#a71c1c);padding:18px;border-radius:12px;color:#fff}
+  .logo{width:64px;height:64px;border-radius:10px;background:#fff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
+  h1{margin:0;font-size:20px}
+  p.lead{margin:6px 0 0 0;color:#ffecec;font-size:14px}
+  nav.states{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .state-btn{background:var(--glass);border-radius:10px;padding:8px 12px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;font-weight:700;color:var(--accent)}
+  main{margin-top:18px}
+  section.state{background:var(--card);border-radius:12px;padding:14px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.08)}
+  .state h2{margin:0 0 6px 0;color:var(--accent)}
+  .districts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px}
+  .district{background:#fff;border-radius:10px;padding:10px;border:1px solid rgba(0,0,0,0.04)}
+  .district h3{margin:0 0 8px 0;font-size:16px;color:#0b3040}
+  .place{display:flex;gap:10px;align-items:flex-start;padding:8px;border-radius:8px;background:#fbfdff;border:1px solid #eef6fb;margin-bottom:8px}
+  .place img{width:86px;height:62px;object-fit:cover;border-radius:8px}
+  .meta{flex:1}
+  .meta .name{font-weight:800;color:var(--dark);margin-bottom:4px}
+  .meta .type{font-size:13px;color:var(--muted)}
+  .meta .contact{font-size:13px;margin-top:6px;color:#0b3040}
+  .meta .actions{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+  .btn{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:7px 9px;border-radius:8px;font-weight:700;text-decoration:none}
+  .middle {text-align:center;margin:20px 0}
+  .middle img{width:100%;max-width:880px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+  footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
+  @media(max-width:700px){.districts{grid-template-columns:1fr}.place img{width:76px;height:56px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">H+</div>
+      <div>
+        <h1>Emergency SOS — South India Medical Finder</h1>
+        <p class="lead">Hospitals & pharmacies across Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telangana — contact, rating & maps.</p>
+      </div>
+    </header>
+
+    <nav class="states" aria-label="States">
+      <button class="state-btn" onclick="scrollToState('Tamil Nadu')">Tamil Nadu</button>
+      <button class="state-btn" onclick="scrollToState('Kerala')">Kerala</button>
+      <button class="state-btn" onclick="scrollToState('Karnataka')">Karnataka</button>
+      <button class="state-btn" onclick="scrollToState('Andhra Pradesh')">Andhra Pradesh</button>
+      <button class="state-btn" onclick="scrollToState('Telangana')">Telangana</button>
+    </nav>
+
+    <main>
+      <!-- Tamil Nadu -->
+      <section id="Tamil Nadu" class="state">
+        <h2>Tamil Nadu</h2>
+        <div class="districts">
+          <article class="district">
+            <h3>Chennai</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1587502536263-4f3c4b4c52d9?auto=format&fit=crop&w=800&q=60" alt="Apollo Hospital">
+              <div class="meta">
+                <div class="name">Apollo Hospitals, Greams Road</div>
+                <div class="type">Specialty: Cardiac, Emergency · ⭐ 4.7</div>
+                <div class="contact">📞 044-2829-0200</div>
+                <div class="actions">
+                  <a class="btn" href="https://www.google.com/maps/search/?api=1&query=13.0624,80.2580" target="_blank">Open Map</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1586773860416-61b4a6d3b8f9?auto=format&fit=crop&w=800&q=60" alt="MIOT">
+              <div class="meta">
+                <div class="name">MIOT International Hospital</div>
+                <div class="type">Specialty: Orthopaedics (Bone) · ⭐ 4.5</div>
+                <div class="contact">📞 044-2252-6161</div>
+                <div class="actions">
+                  <a class="btn" href="https://www.google.com/maps/search/?api=1&query=13.0105,80.1656" target="_blank">Open Map</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1582719478173-1b3a9d7f2d0b?auto=format&fit=crop&w=800&q=60" alt="Sankara">
+              <div class="meta">
+                <div class="name">Sankara Nethralaya</div>
+                <div class="type">Specialty: Eye Care · ⭐ 4.8</div>
+                <div class="contact">📞 044-2827-1000</div>
+                <div class="actions">
+                  <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sankara+Nethralaya+Chennai" target="_blank">Open Map</a>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <h4 style="margin:8px 0 6px 0;color:#0b3040">Nearby Pharmacies</h4>
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Pharmacy">
+              <div class="meta">
+                <div class="name">Apollo Pharmacy - T. Nagar</div>
+                <div class="contact">📞 044-2431-1111</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=13.0412,80.2337" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="district">
+            <h3>Madurai</h3>
+            <div class="place">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Meenakshi_Mission_Hospital_Logo.png" alt="Meenakshi">
+              <div class="meta">
+                <div class="name">Meenakshi Mission Hospital</div>
+                <div class="type">Specialty: General & Emergency · ⭐ 4.5</div>
+                <div class="contact">📞 0452-258 8741</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=9.9380,78.1370" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Madurai Pharmacy">
+              <div class="meta">
+                <div class="name">Madurai Medical Pharmacy</div>
+                <div class="contact">📞 0452-265-7777</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=9.9352,78.1243" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="district">
+            <h3>Coimbatore</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1587502536263-4f3c4b4c52d9?auto=format&fit=crop&w=800&q=60" alt="PSG">
+              <div class="meta">
+                <div class="name">PSG Hospitals</div>
+                <div class="type">Specialty: Multi-speciality · ⭐ 4.4</div>
+                <div class="contact">📞 0422-2570170</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=11.0190,77.0122" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Kovai Pharma">
+              <div class="meta">
+                <div class="name">Kovai Pharma</div>
+                <div class="contact">📞 0422-276-5555</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=11.0088,76.9550" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Kerala -->
+      <section id="Kerala" class="state">
+        <h2>Kerala</h2>
+        <div class="districts">
+          <article class="district">
+            <h3>Thiruvananthapuram</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1582719478173-1b3a9d7f2d0b?auto=format&fit=crop&w=800&q=60" alt="KIMS">
+              <div class="meta">
+                <div class="name">KIMS Hospital</div>
+                <div class="type">Specialty: Cardiac · ⭐ 4.3</div>
+                <div class="contact">📞 0471-294-1100</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=8.4950,76.9396" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Kerala Pharmacy">
+              <div class="meta">
+                <div class="name">Trivandrum Health Pharmacy</div>
+                <div class="contact">📞 0471-276-9999</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=8.4874,76.9479" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="district">
+            <h3>Kochi</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1582719478173-1b3a9d7f2d0b?auto=format&fit=crop&w=800&q=60" alt="Aster Medcity">
+              <div class="meta">
+                <div class="name">Aster Medcity</div>
+                <div class="type">Specialty: Multi-speciality · ⭐ 4.5</div>
+                <div class="contact">📞 0484-669-9999</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=10.0050,76.3105" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Kochi Pharmacy">
+              <div class="meta">
+                <div class="name">Kochi Care Pharmacy</div>
+                <div class="contact">📞 0484-230-4444</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=9.9699,76.3006" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Karnataka -->
+      <section id="Karnataka" class="state">
+        <h2>Karnataka</h2>
+        <div class="districts">
+          <article class="district">
+            <h3>Bengaluru</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1580281657523-2e4c1d5d6b4a?auto=format&fit=crop&w=800&q=60" alt="Narayana">
+              <div class="meta">
+                <div class="name">Narayana Health City</div>
+                <div class="type">Specialty: Cardiac · ⭐ 4.7</div>
+                <div class="contact">📞 080-7122-2222</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=12.9186,77.6101" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Bengaluru Pharmacy">
+              <div class="meta">
+                <div class="name">Bengaluru 24x7 Pharma</div>
+                <div class="contact">📞 080-2211 9000</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=12.9718,77.5950" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="district">
+            <h3>Mysuru</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1576765607921-6d9862f2b0fd?auto=format&fit=crop&w=800&q=60" alt="Mysore">
+              <div class="meta">
+                <div class="name">Apollo Hospitals, Mysuru</div>
+                <div class="type">Specialty: Multi-speciality · ⭐ 4.2</div>
+                <div class="contact">📞 0821-249 7777</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=12.3072,76.6496" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Andhra Pradesh -->
+      <section id="Andhra Pradesh" class="state">
+        <h2>Andhra Pradesh</h2>
+        <div class="districts">
+          <article class="district">
+            <h3>Visakhapatnam</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1582719478173-1b3a9d7f2d0b?auto=format&fit=crop&w=800&q=60" alt="Vizag">
+              <div class="meta">
+                <div class="name">Government General Hospital, Vizag</div>
+                <div class="type">Specialty: General · ⭐ 4.0</div>
+                <div class="contact">📞 0891-256 1111</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=17.6868,83.2185" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Vizag Pharmacy">
+              <div class="meta">
+                <div class="name">Vizag Pharma Care</div>
+                <div class="contact">📞 0891-276 8888</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=17.7060,83.2330" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="district">
+            <h3>Vijayawada</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1587502536263-4f3c4b4c52d9?auto=format&fit=crop&w=800&q=60" alt="Vijayawada">
+              <div class="meta">
+                <div class="name">Government General Hospital, Vijayawada</div>
+                <div class="type">Specialty: General · ⭐ 4.0</div>
+                <div class="contact">📞 0866-253 1111</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=16.5062,80.6480" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Telangana -->
+      <section id="Telangana" class="state">
+        <h2>Telangana</h2>
+        <div class="districts">
+          <article class="district">
+            <h3>Hyderabad</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1576765607921-6d9862f2b0fd?auto=format&fit=crop&w=800&q=60" alt="Yashoda">
+              <div class="meta">
+                <div class="name">Yashoda Hospitals, Hyderabad</div>
+                <div class="type">Specialty: Multi-speciality · ⭐ 4.4</div>
+                <div class="contact">📞 040-4567 4567</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=17.3850,78.4867" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+            <div class="place">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/41/pharmacy-2605123_1280.jpg" alt="Hyd Pharmacy">
+              <div class="meta">
+                <div class="name">Hyderabad Metro Pharmacy</div>
+                <div class="contact">📞 040-275 5555</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=17.4200,78.4136" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="district">
+            <h3>Warangal</h3>
+            <div class="place">
+              <img src="https://images.unsplash.com/photo-1580281657523-2e4c1d5d6b4a?auto=format&fit=crop&w=800&q=60" alt="Warangal">
+              <div class="meta">
+                <div class="name">Warangal Government Hospital</div>
+                <div class="type">Specialty: General · ⭐ 3.9</div>
+                <div class="contact">📞 0870-245 1111</div>
+                <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=17.9689,79.5942" target="_blank">Open Map</a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="middle">
+      <h3 style="color:#fff">Our Medical Support Team</h3>
+      <img src="https://cdn.pixabay.com/photo/2016/11/18/15/37/doctor-1839544_1280.jpg" alt="Medical team">
+    </div>
+
+    <footer>Made by Noah — Educational demo. Not medical advice.</footer>
+  </div>
+
+<script>
+function scrollToState(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</body>
+</html>
